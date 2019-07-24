@@ -53,7 +53,7 @@ class MysqlDatabase implements Database {
             }
         }
 
-    	$command = 'mysqldump --routines '.implode(' ', $extras).'%s %s > %s';
+    	$command = 'mysqldump '.implode(' ', $extras).'%s %s > %s';
         return sprintf($command,
             $params,
             escapeshellarg($this->config['database']),
